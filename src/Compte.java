@@ -30,7 +30,7 @@ public class Compte {
     }
 
     public String getType() {
-        return "Compte"; // Définir un type de base
+        return "Compte";
     }
 
     public float getParam1() {

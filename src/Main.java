@@ -3,12 +3,10 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
-
         Client client = new Client("Doe", "John", "123 rue Exemple", new Date());
-
         Banquier banquier = new Banquier(1001);
-
         banquier.chargerComptes();
 
         while (true) {
@@ -49,7 +47,6 @@ public class Main {
                 System.out.println("Choix invalide.");
             }
         }
-
         scanner.close();
     }
 }
