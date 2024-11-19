@@ -13,7 +13,7 @@ public class CompteCourant extends Compte {
 		if (montant > 0 && getSolde() + decouvertAutorise >= montant) {
 			super.retirer(montant);
 		} else {
-			System.out.println("Découvert dépassé !");
+			System.out.println("Découvert dépassé ! Veuillez re-essayer");
 		}
 	}
 

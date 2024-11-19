@@ -5,13 +5,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Créer un client
         Client client = new Client("Doe", "John", "123 rue Exemple", new Date());
 
-        // Créer un banquier
         Banquier banquier = new Banquier(1001);
 
-        // Charger les comptes depuis le fichier (s'il existe)
         banquier.chargerComptes();
 
         while (true) {
@@ -25,10 +22,8 @@ public class Main {
             int choix = scanner.nextInt();
 
             if (choix == 1) {
-                // Afficher les comptes
                 banquier.afficherComptes();
             } else if (choix == 2) {
-                // Effectuer une opération sur un compte
                 System.out.print("Entrez le numéro du compte : ");
                 int numCompte = scanner.nextInt();
                 System.out.print("Montant : ");
@@ -41,12 +36,10 @@ public class Main {
                     client.gererCompte(banquier.comptes.get(numCompte - 1), montant, false);
                 }
             } else if (choix == 3) {
-                // Supprimer un compte
                 System.out.print("Entrez le numéro du compte à supprimer : ");
                 int numCompteASupprimer = scanner.nextInt();
                 banquier.supprimerCompte(numCompteASupprimer);
             } else if (choix == 4) {
-                // Enregistrer les comptes dans un fichier
                 banquier.sauvegarderComptes();
                 System.out.println("Changements enregistrés.");
             } else if (choix == 5) {
