@@ -1,15 +1,18 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Client client = new Client("Doe", "John", "123 rue Exemple", new Date());
+        Banquier banquier = new Banquier(1001);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        banquier.creerCompte(client, 500, true, 200, 10);
+
+        Compte compte1 = client.sesComptes.get(0);
+
+        System.out.println("Solde initial : " + compte1.getSolde());
+        client.gererCompte(compte1, 300, true); // Dépôt de 300
+        System.out.println("Solde après dépôt : " + compte1.getSolde());
+        client.gererCompte(compte1, 100, false); // Retrait de 100
+        System.out.println("Solde après retrait : " + compte1.getSolde());
     }
 }

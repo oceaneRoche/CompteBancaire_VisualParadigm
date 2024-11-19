@@ -2,13 +2,24 @@ import java.util.Date;
 import java.util.Vector;
 
 public class Client {
-	private String _nom;
-	private String _prenom;
-	private String _adresse;
-	private Date _naissance;
-	public Vector<Compte> _sesComptes = new Vector<Compte>();
+	private String nom;
+	private String prenom;
+	private String adresse;
+	private Date naissance;
+	public Vector<Compte> sesComptes = new Vector<>();
 
-	public void GererCompte(float aInit) {
-		throw new UnsupportedOperationException();
+	public Client(String nom, String prenom, String adresse, Date naissance) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.adresse = adresse;
+		this.naissance = naissance;
+	}
+
+	public void gererCompte(Compte compte, float montant, boolean deposer) {
+		if (deposer) {
+			compte.deposer(montant);
+		} else {
+			compte.retirer(montant);
+		}
 	}
 }
