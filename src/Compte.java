@@ -31,4 +31,5 @@ public class Compte {
 	public float getSolde() {
 		return solde;
 	}
+
 }
